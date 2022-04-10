@@ -1,0 +1,36 @@
+import telebot
+from telebot import types
+
+bot = telebot.TeleBot('5250625320:AAFh3aTAEtmn0Lb1RzlDIPMnXBJl7fTj_l4')
+
+@bot.message_handler(commands = ['start'])
+def start(message):
+    name = f'<b>{message.from_user.first_name} {message.from_user.last_name}</b>'
+    bot.send_message(message.chat.id, '<b>Salam</b>' + ' ' + name, parse_mode='html')
+
+##@bot.message_handler()
+##def get_user_text(message):
+##    if message.text == "Make" or message.text == "MAKE" or message.text == "make":
+##        bot.send_message(message.chat.id, "EE kudyrtpa", parse_mode='html')
+##    elif message.text == "Asik" or message.text == "asik" or message.text == "Асик":
+##        bot.send_message(message.chat.id, "Asik MAL", parse_mode='html')
+##    else:
+##       bot.send_message(message.chat.id, message.text, parse_mode='html')
+
+@bot.message_handler(commands=['website'])
+def website(message):
+    markup = types.InlineKeyboardMarkup()
+    markup.add(types.InlineKeyboardButton("Link", url = "https://vk.com/id489598113"))
+    bot.send_message(message.chat.id, "Bzr Net", reply_markup=markup)
+
+@bot.message_handler(commands=['help'])
+def help(message):
+    markup = types.ReplyKeyboardMarkup()
+    website = types.KeyboardButton('Website')
+    start = types.KeyboardButton('Start')
+    markup.add(website,start)
+    bot.send_message(message.chat.id, "sa", reply_markup=markup)
+
+
+
+bot.polling(non_stop=True)
