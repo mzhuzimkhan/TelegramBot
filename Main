@@ -10,10 +10,10 @@ def start(message):
 
 ##@bot.message_handler()
 ##def get_user_text(message):
-##    if message.text == "Make" or message.text == "MAKE" or message.text == "make":
-##        bot.send_message(message.chat.id, "EE kudyrtpa", parse_mode='html')
+##    if message.text == "Make" or message.text == "Make" or message.text == "make":
+##        bot.send_message(message.chat.id, "Loading...", parse_mode='html')
 ##    elif message.text == "Asik" or message.text == "asik" or message.text == "Асик":
-##        bot.send_message(message.chat.id, "Asik MAL", parse_mode='html')
+##        bot.send_message(message.chat.id, "Result", parse_mode='html')
 ##    else:
 ##       bot.send_message(message.chat.id, message.text, parse_mode='html')
 
