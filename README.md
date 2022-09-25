@@ -1,1 +1,2 @@
 # TelegramBot
+## How it works
